@@ -1,11 +1,14 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { storeToken } from "../HandelToken/StoreToken";
 
 function Login() {
   const [data, setData] = useState({
     username: "",
     password: "",
   });
+  const navigate = useNavigate();
   const handelinput = (e) => {
     let name = e.target.name;
     let value = e.target.value;
@@ -35,6 +38,8 @@ function Login() {
 
       if (data1.status) {
         alert(data1.message);
+        storeToken(data1.detail);
+        navigate("/home");
       }
     } catch (e) {
       console.log("TORI ATUL", e);
