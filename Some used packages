@@ -1,0 +1,2 @@
+jsonwebtoken   //for creating access token
+bcryptjs       //for encrypting and decrypting passwords
