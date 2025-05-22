@@ -88,3 +88,15 @@ function Register() {
 }
 
 export default Register;
+
+
+//easy method of handleinput
+ const handleinput = (e) => {
+    setInput({ ...input, [e.target.name]: e.target.value });
+  };
+
+//for file input
+
+  const changeFilehandler = (e) => {
+    setInput({ ...input, file: e.target.files?.[0] });
+  };
